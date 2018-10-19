@@ -1,0 +1,36 @@
+{
+    "locationData": [
+        {
+            "image": "http://www.awesomelycute.com/gallery/2015/04/funny-cats-50.jpg",
+            "name": "On the wire",
+            "address": "123 Wire Ln, 37213",
+            "time": "morning"
+        },
+        {   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRckomLKuAzC1Wl35XXN0Ly64kExBRq4jJHlXsyQio61HVtgtT3",
+            "name": "In the tree",
+            "address": "2020 Treetop Ct, 37213",
+            "time": "afternoon"
+        },
+        {   "image": "https://i.ytimg.com/vi/eAR3erZ3DrA/hqdefault.jpg",
+            "name": "snowy peak",
+            "address": "3000 Snowman Dr 37213",
+            "time": "evening"
+        },
+        {   "image": "https://www.chewy.com/petcentral/wp-content/uploads/2018/05/black-footed-cat-still.jpg",
+            "name": "africa",
+            "address": "9876 Hakuna Matata Wy 37213",
+            "time": "after dark"
+        },
+        {   "image": "http://mymodernmet.com/wp/wp-content/uploads/2017/10/traveling-cat-sukii-8.jpg",
+            "name": "lake",
+            "address": "3435 Drippy Dr 37213",
+            "time": "morning"
+        },
+        {   "image": "https://www.photocase.com/photos/1731255-small-white-cat-cat-nature-summer-beautiful-green-white-photocase-stock-photo-large.jpeg",
+            "name": "flower",
+            "address": "1111 Flower Floof Rd 37213",
+            "time": "afternoon"
+        }
+    ]
+}
+        
