@@ -1,0 +1,11 @@
+{
+    "movieData": [
+        {
+            "image" : "http://www.letssmiletoday.com/uploads/images/11111-urnext_05.06.2012.jpg",
+            "name" : "Cat Attack",
+            "genre" : "horror",
+            "Estimated Release": "Jan 1, 2222",
+            "Description": "These cats are out of control!"
+        }
+    ]
+}
