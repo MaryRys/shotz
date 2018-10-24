@@ -1,6 +1,15 @@
 import {loadMovie} from '../data/movieData.js';
 
 
+const initialMovieView = () => {
+    loadMovie().then(movie => {
+       return writeMovie(movie);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+}
+
 const writeMovie = (movie) => {
     let domString = '';
     movie.forEach((movie) => {
@@ -22,13 +31,4 @@ const writeMovie = (movie) => {
     $('#movie').append(domString);
 };
 
-const initialMovieView = () => {
-    loadMovie().then(data => {
-       return writeMovie(data);
-    })
-    .catch(error => {
-        console.error('things messed up in movies', error);
-    });
-}
-
-export {initialMovieView};
+export {initialMovieView, writeMovie};
