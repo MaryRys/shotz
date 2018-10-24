@@ -1,21 +1,34 @@
+import {loadMovie} from '../data/movieData.js';
 
-const writeMovie = (arrayOfMovies) => {
+
+const writeMovie = (movie) => {
     let domString = '';
-    arrayOfMovies.forEach((movie) => {
-    domString += `
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="${movieData.image}">
-  <div class="card-body">
-    <h5 class="card-title">${movieData.name}</h5>
-    <p class="card-text">${movieData.description}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">${movieData.genre}</li>
-    <li class="list-group-item">${movieData.releaseDate}</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-</div>`
-    })
+    movie.forEach((movie) => {
+        domString += `
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${movie.image}">
+        <div class="card-body">
+            <h5 class="card-title">${movie.name}</h5>
+            <p class="card-text">${movie.description}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">${movie.genre}</li>
+            <li class="list-group-item">${movie.releaseDate}</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        </div>
+        `
+        })
+    $('#movie').append(domString);
 };
 
-writeMovie();
+const initialMovieView = () => {
+    loadMovie().then(data => {
+       return writeMovie(data);
+    })
+    .catch(error => {
+        console.error('things messed up in movies', error);
+    });
+}
+
+export {initialMovieView};
