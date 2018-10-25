@@ -1,18 +1,17 @@
-import {writeLocations} from '../components/locationComponent.js';
+// import {writeLocations} from '../components/locationComponent.js';
 
-// AJAX 
+// // AJAX 
 
-const loadMovie = () => {
-    return new Promise((resolve, reject) => {
-            $.get('../../db/locations.json')
-            .done(locationData => {
-                writeLocations(locationData.locations);
-            })
-            .fail((error) => {
-                console.error(error);
-            })
-        })
-}
+// const loadLocations = () => {
+//     $.get('../../db/locations.json')
+//     .done((data) => {
+//         writeLocations(data.locations);
+//     })
+//     .fail((error) => {
+//         console.error(error);
+//     })
+        
+// }
 
 
 // const loadMovie = () => {
@@ -28,4 +27,4 @@ const loadMovie = () => {
 //     })
 // }
 
-loadLocations();
+// export {loadLocations};
