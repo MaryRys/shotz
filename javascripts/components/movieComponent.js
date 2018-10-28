@@ -1,14 +1,22 @@
-import {loadMovie} from '../data/movieData.js';
+// import {loadMovie} from '../data/movieData.js';
 
 
-const initialMovieView = () => {
-    loadMovie().then(movie => {
-       return writeMovie(movie);
+// const initialMovieView = () => {
+//     loadMovie().then(movie => {
+//        return writeMovie(movie);
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     });
+// }
+
+$.get('../db/movie.json')
+    .done(data => {
+    writeMovie(data.movieData);
     })
-    .catch((error) => {
-        console.error(error);
-    });
-}
+    .fail((error) => {
+    console.error(error);
+    })
 
 const writeMovie = (movie) => {
     let domString = '';
@@ -22,8 +30,8 @@ const writeMovie = (movie) => {
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">${movie.genre}</li>
-            <li class="list-group-item">${movie.releaseDate}</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">${movie.estimatedRelease}</li>
+            <li class="list-group-item">${movie.description}</li>
         </ul>
         </div>
         `
@@ -31,4 +39,4 @@ const writeMovie = (movie) => {
     $('#movie').append(domString);
 };
 
-export {initialMovieView, writeMovie};
+writeMovie();

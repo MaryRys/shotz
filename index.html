@@ -16,7 +16,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 <!-- radio buttons -->
-            <div class="radios" class="container col-2">
+            <div class="radios">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                     <label class="custom-control-label" for="customRadio1">Morning</label>
@@ -37,8 +37,10 @@
             </form>
         </nav>
     </header>
-    <div id="movie"></div>
-    <div id="locations"></div>
+    <div class="row">
+        <div id="movie" class="col-md-6"></div>
+        <div id="locations" class="col-md-6"></div>
+    </div>
 
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"

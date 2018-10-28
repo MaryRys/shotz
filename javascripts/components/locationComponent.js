@@ -1,18 +1,26 @@
 
 
-const initialLocationsView = () => {
-    loadLocations()
-    .then(data => {
-       return writeMovie(movie);
+// // const initialLocationsView = () => {
+// //     loadLocations()
+// //     .then(data => {
+// //        return writeMovie(movie);
+// //     })
+// //     .catch(error => {
+// //         console.error(error);
+// //     })
+// // }
+$.get('../db/locations.json')
+    .done(data => {
+    writeLocations(data.locationData);
     })
-    .catch(error => {
-        console.error(error);
+    .fail((error) => {
+    console.error(error);
     })
-}
 
-const writeLocations = (myLocations) => {
+
+const writeLocations = (Locations) => {
     let domString = '';
-    myLocations.forEach((location) => {
+    Locations.forEach((location) => {
         domString += `
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${location.image}" alt="Card image cap">
@@ -26,5 +34,13 @@ const writeLocations = (myLocations) => {
     })
     $('#locations').append(domString);
 }
+writeLocations();
+// $.get('../../db/locations.json')
+// .done((data) => {
+//     writeLocations(data.locations);
+// })
+// .fail((error) => {
+//     console.error(error);
+// })
 
-export {writeLocations, initialLocationsView};
+// export {writeLocations};
