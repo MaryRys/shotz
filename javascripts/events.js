@@ -1,7 +1,7 @@
 
-const userSearch = () => {
+// const userSearch = () => {
     
-};
+// };
 
-$('.form-control').keyup()
+// $('.form-control').keyup()
 

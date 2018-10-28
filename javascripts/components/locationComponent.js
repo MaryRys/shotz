@@ -34,6 +34,28 @@ const writeLocations = (Locations) => {
     })
     $('#locations').append(domString);
 }
+
+const morningFilter = () => {
+    $('#customRadio1').click(() => {
+        $('.locationData.location').show();
+        $('.locationData.location').not('.morning').hide();
+    })
+};
+
+morningFilter();
+
+const afternoonFilter = () => {
+
+};
+
+const eveningFilter = () => {
+
+};
+
+const darkFilter = () => {
+
+};
+
 writeLocations();
 // $.get('../../db/locations.json')
 // .done((data) => {
