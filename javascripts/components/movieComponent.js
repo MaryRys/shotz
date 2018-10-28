@@ -1,26 +1,28 @@
-// import {loadMovie} from '../data/movieData.js';
+import {loadMovie} from '../data/movieData.js';
 
 
-// const initialMovieView = () => {
-//     loadMovie().then(movie => {
-//        return writeMovie(movie);
+const initialMovieView = (movie) => {
+    loadMovie()
+    .then(movie => {
+        console.log(movie);
+    //    return writeMovie(movie);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+}
+
+// $.get('../db/movie.json')
+//     .done(data => {
+//     writeMovie(data.movieData);
 //     })
-//     .catch((error) => {
-//         console.error(error);
-//     });
-// }
+//     .fail((error) => {
+//     console.error(error);
+//     })
 
-$.get('../db/movie.json')
-    .done(data => {
-    writeMovie(data.movieData);
-    })
-    .fail((error) => {
-    console.error(error);
-    })
-
-const writeMovie = (movie) => {
+const writeMovie = (movieData) => {
     let domString = '';
-    movie.forEach((movie) => {
+    movieData.forEach((movie) => {
         domString += `
         <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="${movie.image}">
@@ -39,4 +41,5 @@ const writeMovie = (movie) => {
     $('#movie').append(domString);
 };
 
-writeMovie();
+
+export {initialMovieView, writeMovie};

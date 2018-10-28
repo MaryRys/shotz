@@ -1,26 +1,27 @@
+import {loadLocations} from '../data/locationsData.js';
 
-
-// // const initialLocationsView = () => {
-// //     loadLocations()
-// //     .then(data => {
-// //        return writeMovie(movie);
-// //     })
-// //     .catch(error => {
-// //         console.error(error);
-// //     })
-// // }
-$.get('../db/locations.json')
-    .done(data => {
-    writeLocations(data.locationData);
+const initialLocationsView = () => {
+    loadLocations()
+    .then((location) => {
+       writeLocations(location);
     })
-    .fail((error) => {
-    console.error(error);
+    .catch(error => {
+        console.error(error);
     })
+}
+
+// $.get('../db/locations.json')
+//     .done(data => {
+//     writeLocations(data.locationData);
+//     })
+//     .fail((error) => {
+//     console.error(error);
+//     })
 
 
-const writeLocations = (Locations) => {
+const writeLocations = (locationData) => {
     let domString = '';
-    Locations.forEach((location) => {
+    locationData.forEach((location) => {
         domString += `
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${location.image}" alt="Card image cap">
@@ -32,37 +33,7 @@ const writeLocations = (Locations) => {
             </div>
         `
     })
-    $('#locations').append(domString);
-}
-
-const morningFilter = () => {
-    $('#customRadio1').click(() => {
-        $('.locationData.location').show();
-        $('.locationData.location').not('.morning').hide();
-    })
+    $('#locations').html(domString);
 };
 
-morningFilter();
-
-const afternoonFilter = () => {
-
-};
-
-const eveningFilter = () => {
-
-};
-
-const darkFilter = () => {
-
-};
-
-writeLocations();
-// $.get('../../db/locations.json')
-// .done((data) => {
-//     writeLocations(data.locations);
-// })
-// .fail((error) => {
-//     console.error(error);
-// })
-
-// export {writeLocations};
+export {initialLocationsView, writeLocations};
