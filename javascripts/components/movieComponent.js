@@ -1,24 +1,14 @@
 import {loadMovie} from '../data/movieData.js';
 
-
 const initialMovieView = (movie) => {
     loadMovie()
     .then(movie => {
-        console.log(movie);
-    //    return writeMovie(movie);
+       writeMovie(movie);
     })
     .catch((error) => {
         console.error(error);
     });
 }
-
-// $.get('../db/movie.json')
-//     .done(data => {
-//     writeMovie(data.movieData);
-//     })
-//     .fail((error) => {
-//     console.error(error);
-//     })
 
 const writeMovie = (movieData) => {
     let domString = '';
@@ -42,4 +32,4 @@ const writeMovie = (movieData) => {
 };
 
 
-export {initialMovieView, writeMovie};
+export {initialMovieView};

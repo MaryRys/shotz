@@ -10,15 +10,6 @@ const initialLocationsView = () => {
     })
 }
 
-// $.get('../db/locations.json')
-//     .done(data => {
-//     writeLocations(data.locationData);
-//     })
-//     .fail((error) => {
-//     console.error(error);
-//     })
-
-
 const writeLocations = (locationData) => {
     let domString = '';
     locationData.forEach((location) => {
