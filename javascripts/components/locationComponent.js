@@ -1,26 +1,18 @@
+import {loadLocations} from '../data/locationsData.js';
 
-
-// // const initialLocationsView = () => {
-// //     loadLocations()
-// //     .then(data => {
-// //        return writeMovie(movie);
-// //     })
-// //     .catch(error => {
-// //         console.error(error);
-// //     })
-// // }
-$.get('../db/locations.json')
-    .done(data => {
-    writeLocations(data.locationData);
+const initialLocationsView = () => {
+    loadLocations()
+    .then((location) => {
+       writeLocations(location);
     })
-    .fail((error) => {
-    console.error(error);
+    .catch(error => {
+        console.error(error);
     })
+}
 
-
-const writeLocations = (Locations) => {
+const writeLocations = (locationData) => {
     let domString = '';
-    Locations.forEach((location) => {
+    locationData.forEach((location) => {
         domString += `
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${location.image}" alt="Card image cap">
@@ -32,15 +24,7 @@ const writeLocations = (Locations) => {
             </div>
         `
     })
-    $('#locations').append(domString);
-}
-writeLocations();
-// $.get('../../db/locations.json')
-// .done((data) => {
-//     writeLocations(data.locations);
-// })
-// .fail((error) => {
-//     console.error(error);
-// })
+    $('#locations').html(domString);
+};
 
-// export {writeLocations};
+export {initialLocationsView, writeLocations};
